@@ -30,7 +30,7 @@ LoginController = {
 
 module.exports.Controller = LoginController;
 module.exports.controller = (app) => {
-  app.get('/v1/user/auth/snapchat', LoginController.loginSnapchat);
-  app.get('/v1/user/auth/snapchat/return', LoginController.loginSnapchatCB);
+  app.get('/v1/user/snapchat', LoginController.loginSnapchat);
+  app.get('/v1/user/snapchat/return', LoginController.loginSnapchatCB);
   app.get('/login', LoginController.failed);
 }
