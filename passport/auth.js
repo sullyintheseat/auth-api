@@ -15,9 +15,9 @@ module.exports = passport => {
   passport.use(
     'snapchat',
     new SnapchatStrategy({
-      clientID: '8ff4afad-bd62-4704-9ffc-e19f1fd49202',
-      clientSecret: 'QW9HaCsQ-MqLtAw5HnSXbDFZ5QLdK1tLRVHfPpNynUE',
-      callbackURL: 'http://localhost:3000/v1/user/auth/snapchat/return',
+      clientID: process.env.snapchat_APP_ID,
+      clientSecret: process.env.snapchat_APP_SECRET,
+      callbackURL: process.env.snapchat_CALLBACK_URL,
       profileFields: ['id', 'displayName', 'bitmoji'],
       scope: ['user.display_name', 'user.bitmoji.avatar'],
     }, function(accessToken, refreshToken, profile, cb) {
