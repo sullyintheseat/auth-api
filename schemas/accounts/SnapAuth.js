@@ -36,14 +36,14 @@ class Snap {
       let exists = await this.findOne(data.snapid);
 
       if(Boolean(exists)){
-        let update = await this.findOneAndUpdate(
+         await this.findOneAndUpdate(
           {
             _id : exists._id
           },
           data,
           {new: true})
           .exec()
-        return update.snapid;
+        return data.snapid;
       } else {
         let me = await this.create(data);
         return me.dsid;
