@@ -42,7 +42,7 @@ class Snap {
           data,
           {new: true})
           .exec()
-        return data.snapid;
+        return exists.dsid;
       } else {
         let me = await this.create(data);
         return me.dsid;
