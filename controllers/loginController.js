@@ -17,7 +17,7 @@ LoginController = {
       if (err) {
         res.status(200).send(err.message);
       } else {
-        res.header('snapid', profile.id );
+        res.header('snapid', profile.profile.id );
         res.header('snaptoken', profile.accessToken);
         res.header('snaprefresh', profile.refreshToken);
         res.send(profile);
