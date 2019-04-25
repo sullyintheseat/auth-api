@@ -51,7 +51,7 @@ LoginController = {
         res.status(401).send('Record not found');
       }
     } catch (err) {
-      res.status(500).send('Unknown error')
+      res.status(500).send(err)
     }
   }
 }
