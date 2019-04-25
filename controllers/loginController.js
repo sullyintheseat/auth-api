@@ -23,7 +23,7 @@ LoginController = {
           snaptoken: profile.accessToken,
           snaprefresh: profile.refreshToken
         };
-       push(obj, res); 
+       LoginController.push(obj, res); 
       }
     }
   )(req, res, next);
