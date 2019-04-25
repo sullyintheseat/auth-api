@@ -32,7 +32,7 @@ LoginController = {
   push: async (obj, res) => {
     try {
       let val = await SnapAuth.createSnap(obj);
-      res.redirect(`https://pwa.digitalseat.io/snapback?id=${val}`)
+      res.redirect(`https://pwa.digitalseat.io/snapback/${val}`)
     } catch (err) {
       res.status(500).send('Unknown error')
     }
