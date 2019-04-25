@@ -23,16 +23,19 @@ LoginController = {
           snaptoken: profile.accessToken,
           snaprefresh: profile.refreshToken
         };
-        try {
-          let val = SnapAuth.createSnap(obj);
-          res.redirect(`https://pwa.digitalseat.io/snapback?id=${val}`)
-        } catch (err) {
-          res.status(500).send('Unknown error')
-        }
-        
+       push(obj, res); 
       }
     }
   )(req, res, next);
+  },
+
+  push: async (obj, res) => {
+    try {
+      let val = await SnapAuth.createSnap(obj);
+      res.redirect(`https://pwa.digitalseat.io/snapback?id=${val}`)
+    } catch (err) {
+      res.status(500).send('Unknown error')
+    }
   },
 
   failed: (req, res) => {
