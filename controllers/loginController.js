@@ -17,7 +17,7 @@ LoginController = {
       if (err) {
         res.status(200).send(err.message);
       } else {
-        res.status(200).send(profile);
+        res.redirect('https://pwa.digitalseat.io/snapback')
       }
     }
   )(req, res, next);
