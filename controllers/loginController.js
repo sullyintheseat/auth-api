@@ -45,7 +45,7 @@ LoginController = {
   getRecordById: async (req, res) => {
     try {
       let record = await SnapAuth.getRecordBy(req.params.id);
-      if(Booleanr(ecord)) {
+      if(Boolean(record)) {
         res.status(200).send(record);
       } else {
         res.status(401).send('Record not found');
