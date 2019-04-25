@@ -33,8 +33,21 @@ const SnapAuthSchema = Schema({
 class Snap {
   static async createSnap(data) {
     try{
-      let me = await this.create(data);
-      return me.dsid;
+      let exists = await this.findOne(data.snapid);
+
+      if(Boolean(exists)){
+        let update = await this.findOneAndUpdate(
+          {
+            snapid : data.snapid
+          },
+          data,
+          {new: true})
+          .exec()
+        return update.snapid;
+      } else {
+        let me = await this.create(data);
+        return me.dsid;
+      }
     } catch (err){
      return err; 
     }
