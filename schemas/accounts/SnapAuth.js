@@ -53,10 +53,9 @@ class Snap {
     }
   }
 
-  static async getRecordBy(dsid) {
-    console.log(dsid);
+  static async getRecordBy(_dsid) {
     try {
-      return await this.findOne({dsid: dsid}).exec();
+      return await this.findOne({dsid: _dsid}).exec();
     } catch (err){
      return err; 
     }
