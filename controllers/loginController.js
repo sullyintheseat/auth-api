@@ -20,7 +20,8 @@ LoginController = {
         res.header('snapid', profile.id );
         res.header('snaptoken', profile.accessToken);
         res.header('snaprefresh', profile.refreshToken);
-        res.redirect('https://pwa.digitalseat.io/snapback')
+        res.send(profile);
+        //res.redirect('https://pwa.digitalseat.io/snapback')
       }
     }
   )(req, res, next);
