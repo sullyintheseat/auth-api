@@ -31,6 +31,7 @@ const SnapAuthSchema = Schema({
 
 
 class Snap {
+  
   static async createSnap(data) {
     try{
       let exists = await this.findOne({snapid: data.snapid});
@@ -51,6 +52,15 @@ class Snap {
      return err; 
     }
   }
+
+  static async getRecordBy(dsid) {
+    try {
+      return await this.findOne({dsid});
+    } catch (err){
+     return err; 
+    }
+  }
+
 }
 
 SnapAuthSchema.loadClass(Snap);

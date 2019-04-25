@@ -40,6 +40,19 @@ LoginController = {
 
   failed: (req, res) => {
     res.status(400).send('nope');
+  },
+
+  getRecordById: async (req, res) => {
+    try {
+      let record = await SnapAuth.getRecordBy(req.params.id);
+      if(Booleanr(ecord)) {
+        res.status(200).send(record);
+      } else {
+        res.status(401).send('Record not found');
+      }
+    } catch (err) {
+      res.status(500).send('Unknown error')
+    }
   }
 }
 
