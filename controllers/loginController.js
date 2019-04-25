@@ -12,7 +12,7 @@ LoginController = {
     }
   },
 
-  loginSnapchatCB: (req, res, next) => {
+  loginSnapchatCB: async (req, res, next) => {
     passport.authenticate('snapchat',{ scope: ['profile'] },
     function (err, profile) {
       if (err) {
