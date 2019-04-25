@@ -55,7 +55,7 @@ class Snap {
 
   static async getRecordBy(dsid) {
     try {
-      return await this.findOne({dsid: dsid});
+      return await this.findOne({dsid: dsid}).exec();
     } catch (err){
      return err; 
     }
