@@ -38,7 +38,7 @@ class Snap {
       if(Boolean(exists)){
         let update = await this.findOneAndUpdate(
           {
-            snapid : data.snapid
+            _id : exists._id
           },
           data,
           {new: true})
